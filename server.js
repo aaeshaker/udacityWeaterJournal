@@ -48,5 +48,6 @@ app.post('/sendData', (request, response) => {
         date: request.body.date,
         content: request.body.content
     };
-    response.send(projectData).status(200).end();
+    // response.send(projectData).status(200).end();
+    response.status(404).end();
 });
