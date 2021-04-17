@@ -1,6 +1,6 @@
 /* Global Variables */
 // Personal API Key for OpenWeatherMap API
-const apiKey = '&appind=30e2b42ea2a07b0e979c270fbd0441ba&units=imperial';
+const apiKey = '&appid=7130c3c7cc45085627bea6bbdeac4bd9&units=imperial';
 const apiUrl = 'http://localhost:4200/';
 
 const zipCodeElement = document.getElementById('zip');
