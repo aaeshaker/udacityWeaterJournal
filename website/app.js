@@ -1,11 +1,6 @@
 // Create a new date instance dynamically with JS
-<<<<<<< HEAD
 let day = new Date();
 let newDate = (day.getMonth() + 1) + '/'+ day.getDate()+'/'+ day.getFullYear();
-=======
-let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
->>>>>>> 688d7d91c9ee8df53b57023236fccf1bd5b51478
 
 /* Global Variables */
 const apiUrl = "http://api.openweathermap.org/data/2.5/forecast?zip=";
@@ -39,16 +34,11 @@ const postData = async ( url = '', data = {}) =>{
         console.log(newData);
         return newData;
     }catch(error){
-<<<<<<< HEAD
         console.log("the request failed");
-=======
-        console.log("error", error);
->>>>>>> 688d7d91c9ee8df53b57023236fccf1bd5b51478
     }
 }
 
 //function to display data
-<<<<<<< HEAD
 const updateUI = async()=>{
     const request = await fetch('/all')
     try{
@@ -60,43 +50,18 @@ const updateUI = async()=>{
     }catch(err){
     console.log('error',err);
     }
-=======
-const updateUI = async () => {
-    const request = await fetch('/all');
-    try{
-        const allInfo = await request.json();
-        
-        const date1 = document.getElementById('date');
-        date.innerHTML = `Date: ${allInfo[0].date}`;
-        
-        const temp = document.getElementById('temp');
-        temp.innerHTML = `Temprature: ${allInfo[0].temp}`;
-
-        const content = document.getElementById('content');
-        content.innerHTML = `I feel: ${allInfo[0].content}`;
-    }catch(err){
-        console.log("error", err);
->>>>>>> 688d7d91c9ee8df53b57023236fccf1bd5b51478
     }
 
 //add EventListener
 document.getElementById("generate").addEventListener('click', action)
 
 function action(){
-<<<<<<< HEAD
-=======
-    //console.log("clicked");
->>>>>>> 688d7d91c9ee8df53b57023236fccf1bd5b51478
     const feelings = document.getElementById("feelings").value;
     const newZipCode = document.getElementById("zip").value;
 
     getWeather(apiUrl, newZipCode, apiKey)
     .then((data) => {
-<<<<<<< HEAD
         postData('/add', {date: newDate, temp: data.list[0].main.temp, feeling: feelings})
-=======
-        postData('/add', {date: newDate, temp: data.list[0].main.temp, content: feelings})
->>>>>>> 688d7d91c9ee8df53b57023236fccf1bd5b51478
         updateUI();
     })
 };
