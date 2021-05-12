@@ -35,12 +35,17 @@ app.get('/all', sendInfo);
 
 function sendInfo(req, res){
     res.send(projectData);
+<<<<<<< HEAD
     projectData = {};
+=======
+    projectData = [];
+>>>>>>> 688d7d91c9ee8df53b57023236fccf1bd5b51478
 }
 
 //POST
 app.post('/add', addInfo);
 
+<<<<<<< HEAD
 function addInfo(request, respond){
     let data = request.body;
 
@@ -55,4 +60,15 @@ function addInfo(request, respond){
     projectData["feel"] = data.feeling;
     
     respond.send(projectData);
+=======
+function addInfo(request, resource){
+    console.log(request.body);
+    newEntry = {
+       date : request.body.date,
+       temp : request.body.temp,
+       content : request.body.content
+    };
+    projectData.push(newEntry);
+    //console.log(projectData);
+>>>>>>> 688d7d91c9ee8df53b57023236fccf1bd5b51478
 }
